@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var authViewModel = AuthViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        NavigationView {
+            if authViewModel.isSignedIn {
+                if !authViewModel.hasBabyInfo {
+                    BabyInfoView()
+                } else {
+                    HomeView()
+                }
+            } else {
+                LoginView()
+                    .environmentObject(authViewModel)
+            }}.environmentObject(authViewModel).onAppear() {
+                print("ContentView appeared. isSignedIn: \(authViewModel.isSignedIn), hasBabyInfo: \(authViewModel.hasBabyInfo)")
+            }
     }
 }
 
