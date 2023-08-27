@@ -11,19 +11,44 @@ struct LoginView: View {
     @State private var selectedTab = 0
 
     var body: some View {
-        TabView(selection: $selectedTab) {
-            SignIn()
-                .tabItem {
-                    Text("Se connecter")
-                }
-                .tag(0)
+        VStack {
+                   // Une image (veuillez ajouter votre image dans l'asset catalog et remplacez "your_image_name")
+                   Image("logo")
+                       .resizable()
+                       .scaledToFit()
+                       .frame(width: 100, height: 100)
+                   
+                   Text("Baby Chef")
+                       .font(.largeTitle)
+                       .bold()
+                       .padding(.bottom, 50)
 
-            SignUp()
-                .tabItem {
-                    Text("S'inscrire")
-                }
-                .tag(1)
-        }
+                   // Un bouton pour aller vers la page d'inscription
+                   NavigationLink(destination: SignUp()) {
+                       Text("Devenir Chef")
+                           .font(.headline)
+                           .foregroundColor(.white)
+                           .padding()
+                           .frame(width: 220, height: 60)
+                           .background(Color.blue)
+                           .cornerRadius(15.0)
+                   }
+
+                   // Un lien vers la page de connexion
+                   NavigationLink(destination: SignIn()) {
+                       HStack {
+                           Text("Je suis déjà Chef")
+                               .font(.subheadline)
+                           
+                           Image(systemName: "arrow.right")
+                               .imageScale(.medium)
+                       }
+                       .foregroundColor(.blue)
+                       .padding(.top, 20)
+                   }
+               }
+               .padding()
+               .navigationBarHidden(true)
     }
 }
 

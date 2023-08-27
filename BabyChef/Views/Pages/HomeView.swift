@@ -10,11 +10,12 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     var body: some View {
-        Text("Bienvenue à la maison!")
-        Button("Déconnexion") {
-            authViewModel.signOut()
+        VStack {
+            Text("Bienvenue à la maison!")
+            Button("Déconnexion") {
+                authViewModel.signOut()
+            }            
         }
-        Text("test")
     }
 }
 

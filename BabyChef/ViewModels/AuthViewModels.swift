@@ -18,35 +18,17 @@ class AuthViewModel: ObservableObject {
     
     init() {
         authStateDidChangeListenerHandle = Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
-               guard let self = self else { return }
-               
-               if let user = user {
-                   // L'utilisateur est connecté, vérifions s'il existe dans Firestore
-                   let db = Firestore.firestore()
-                   db.collection("users").document(user.uid).getDocument { (document, error) in
-                       if let document = document, document.exists {
-                           // L'utilisateur existe dans Firestore, mettons à jour l'état
-                           self.user = user
-                           self.isSignedIn = true
-                           self.checkForBabyInfo()
-                       } else {
-                           // L'utilisateur n'existe pas dans Firestore, déconnexion
-                           do {
-                               try Auth.auth().signOut()
-                               self.user = nil
-                               self.isSignedIn = false
-                           } catch let signOutError as NSError {
-                               print("Error signing out: %@", signOutError)
-                               self.errorMessage = signOutError.localizedDescription
-                           }
-                       }
-                   }
-               } else {
-                   // L'utilisateur n'est pas connecté
-                   self.user = nil
-                   self.isSignedIn = false
-               }
-           }
+            guard let self = self else { return }
+
+            if let user = user {
+                self.user = user
+                self.isSignedIn = true
+            } else {
+                self.user = nil
+                self.isSignedIn = false
+            }
+            self.checkForBabyInfo()
+        }
     }
 
     deinit {
@@ -57,12 +39,14 @@ class AuthViewModel: ObservableObject {
     }
 
     func signIn(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
+        print("signin")
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             self.handleAuthResult(result: result, error: error, completion: completion)
         }
     }
 
     func signUp(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
+        print("signUp")
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             self.handleAuthResult(result: result, error: error, completion: completion)
         }
