@@ -14,15 +14,19 @@ struct BabyInfoView: View {
     @State private var birthDate: Date = Date()
     @State private var gender: String = "Garçon"
 
+    let genders = ["Fille", "Garçon"]
+    
     var body: some View {
         Form {
             Section(header: Text("Informations sur le bébé")) {
                 TextField("Prénom", text: $firstName)
                 DatePicker("Date de naissance", selection: $birthDate, displayedComponents: .date)
                 Picker("Sexe", selection: $gender) {
-                    Text("Garçon").tag("Garçon")
-                    Text("Fille").tag("Fille")
+                    ForEach(genders, id: \.self) { gender in
+                        Text(gender).tag(gender)
+                    }
                 }
+                .pickerStyle(SegmentedPickerStyle())
             }
 
             Button("Soumettre") {

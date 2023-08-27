@@ -14,6 +14,8 @@ class AuthViewModel: ObservableObject {
     @Published var isSignedIn = false
     @Published var errorMessage: String?
     @Published var hasBabyInfo: Bool = false
+    @Published var isLoading: Bool = false
+    
     private var authStateDidChangeListenerHandle: AuthStateDidChangeListenerHandle?
     
     init() {
@@ -39,20 +41,23 @@ class AuthViewModel: ObservableObject {
     }
 
     func signIn(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
-        print("signin")
+        self.isLoading = true
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             self.handleAuthResult(result: result, error: error, completion: completion)
         }
+        self.isLoading = false
     }
 
     func signUp(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
-        print("signUp")
+        self.isLoading = true
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             self.handleAuthResult(result: result, error: error, completion: completion)
         }
+        self.isLoading = false
     }
 
     func signOut() {
+        self.isLoading = true
         do {
             try Auth.auth().signOut()
             self.user = nil
@@ -61,9 +66,11 @@ class AuthViewModel: ObservableObject {
             print("Error signing out: %@", signOutError)
             self.errorMessage = signOutError.localizedDescription
         }
+        self.isLoading = false
     }
     
     func updateBabyInfo(firstName: String, birthDate: Date, gender: String, completion: @escaping (Bool, Error?) -> Void) {
+        self.isLoading = true
         guard let user = user else { return }
 
         let db = Firestore.firestore()
@@ -73,7 +80,7 @@ class AuthViewModel: ObservableObject {
             "gender": gender
         ]
 
-        db.collection("users").document(user.uid).setData(["babyInfo": babyInfo]) { error in
+        db.collection("users").document(user.uid).setData(["babyInfo": babyInfo], merge: true) { error in
             if let error = error {
                 completion(false, error)
                 return
@@ -84,6 +91,7 @@ class AuthViewModel: ObservableObject {
 
             completion(true, nil)
         }
+        self.isLoading = false
     }
     
     func checkForBabyInfo() {
@@ -101,6 +109,45 @@ class AuthViewModel: ObservableObject {
                 }
             }
     }
+    
+    
+    func completeSignUp(email: String, password: String, firstName: String, gender: String, birthDate: Date, completion: @escaping (Bool, Error?) -> Void) {
+        self.isLoading = true
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                print("Erreur lors de la création de l'utilisateur: \(error.localizedDescription)")
+                completion(false, error)
+                return
+            }
+
+            guard let user = result?.user else {
+                print("Utilisateur non disponible")
+                completion(false, nil)
+                return
+            }
+
+            let db = Firestore.firestore()
+            let uid = user.uid
+
+            // Enregistrez les informations sous un champ appelé "account"
+            let accountInfo: [String: Any] = [
+                "firstName": firstName,
+                "gender": gender,
+                "birthDate": birthDate
+            ]
+
+            db.collection("users").document(uid).setData(["account": accountInfo], merge: true) { (error) in
+                if let error = error {
+                    print("Erreur lors de l'ajout des données: \(error.localizedDescription)")
+                    completion(false, error)
+                } else {
+                    print("Données ajoutées avec succès.")
+                    completion(true, nil)
+                }
+            }
+        }
+        self.isLoading = false
+    }
 
     private func handleAuthResult(result: AuthDataResult?, error: Error?, completion: @escaping (Bool, Error?) -> Void) {
         if let error = error {
@@ -117,4 +164,5 @@ class AuthViewModel: ObservableObject {
         
         completion(true, nil)
     }
+    
 }
