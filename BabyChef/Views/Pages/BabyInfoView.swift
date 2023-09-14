@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum NavigationTarget: Hashable {
+    case none
+    case confirmationView
+}
+
 struct BabyInfoView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
 
@@ -15,26 +20,29 @@ struct BabyInfoView: View {
     @State private var gender: String = "Garçon"
 
     let genders = ["Fille", "Garçon"]
-    
-    var body: some View {
-        Form {
-            Section(header: Text("Informations sur le bébé")) {
-                TextField("Prénom", text: $firstName)
-                DatePicker("Date de naissance", selection: $birthDate, displayedComponents: .date)
-                Picker("Sexe", selection: $gender) {
-                    ForEach(genders, id: \.self) { gender in
-                        Text(gender).tag(gender)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-            }
 
-            Button("Soumettre") {
-                authViewModel.updateBabyInfo(firstName: firstName, birthDate: birthDate, gender: gender) { success, error in
-                    if success {
-                        print("Informations mises à jour avec succès.")
-                    } else if let error = error {
-                        print("Une erreur s'est produite: \(error)")
+    var body: some View {
+        NavigationView {
+            VStack {
+                Form {
+                    Section(header: Text("Informations sur le bébé")) {
+                        TextField("Prénom", text: $firstName)
+                        DatePicker("Date de naissance", selection: $birthDate, displayedComponents: .date)
+                        Picker("Sexe", selection: $gender) {
+                            ForEach(genders, id: \.self) { gender in
+                                Text(gender).tag(gender)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                    }
+
+                    Button("Soumettre") {
+                        authViewModel.updateBabyInfo(firstName: firstName, birthDate: birthDate, gender: gender) { success, error in
+                            if success {
+                            } else if let error = error {
+                                print("Une erreur s'est produite: \(error)")
+                            }
+                        }
                     }
                 }
             }

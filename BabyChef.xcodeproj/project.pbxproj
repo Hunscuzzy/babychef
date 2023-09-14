@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA3349BA2A9931C50057EDB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA3349B92A9931C50057EDB8 /* GoogleService-Info.plist */; };
+		AA2135192AA3DBCD00EC10B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA2135182AA3DBCD00EC10B3 /* GoogleService-Info.plist */; };
+		AA2E0B3D2AB3A22F004D5F77 /* StepperIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2E0B3C2AB3A22F004D5F77 /* StepperIndicator.swift */; };
+		AA2E0B402AB3A607004D5F77 /* BcTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2E0B3F2AB3A607004D5F77 /* BcTextField.swift */; };
+		AA2E0B422AB3A653004D5F77 /* BcDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2E0B412AB3A653004D5F77 /* BcDatePicker.swift */; };
+		AA2E0B442AB3A69D004D5F77 /* BcToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2E0B432AB3A69D004D5F77 /* BcToggleButton.swift */; };
+		AA2E0B462AB3A8B2004D5F77 /* BcSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2E0B452AB3A8B2004D5F77 /* BcSecureField.swift */; };
 		AA3349BE2A993C550057EDB8 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3349BD2A993C550057EDB8 /* SignIn.swift */; };
 		AA3349C02A993CEF0057EDB8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3349BF2A993CEF0057EDB8 /* HomeView.swift */; };
 		AA3349C22A9946A40057EDB8 /* BabyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3349C12A9946A40057EDB8 /* BabyInfoView.swift */; };
+		AA37043A2A9D4369006D7B29 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3704392A9D4369006D7B29 /* ConfirmationView.swift */; };
+		AA37043D2A9D44C4006D7B29 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA37043C2A9D44C4006D7B29 /* RoundedCorners.swift */; };
 		AA4ADCD22A97D2AB000B4F3F /* BabyChefApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4ADCD12A97D2AB000B4F3F /* BabyChefApp.swift */; };
 		AA4ADCD42A97D2AB000B4F3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4ADCD32A97D2AB000B4F3F /* ContentView.swift */; };
 		AA4ADCD62A97D2AC000B4F3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4ADCD52A97D2AC000B4F3F /* Assets.xcassets */; };
@@ -28,10 +35,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA3349B92A9931C50057EDB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA2135182AA3DBCD00EC10B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA2E0B3C2AB3A22F004D5F77 /* StepperIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperIndicator.swift; sourceTree = "<group>"; };
+		AA2E0B3F2AB3A607004D5F77 /* BcTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BcTextField.swift; sourceTree = "<group>"; };
+		AA2E0B412AB3A653004D5F77 /* BcDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BcDatePicker.swift; sourceTree = "<group>"; };
+		AA2E0B432AB3A69D004D5F77 /* BcToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BcToggleButton.swift; sourceTree = "<group>"; };
+		AA2E0B452AB3A8B2004D5F77 /* BcSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BcSecureField.swift; sourceTree = "<group>"; };
 		AA3349BD2A993C550057EDB8 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		AA3349BF2A993CEF0057EDB8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AA3349C12A9946A40057EDB8 /* BabyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyInfoView.swift; sourceTree = "<group>"; };
+		AA3704392A9D4369006D7B29 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		AA37043C2A9D44C4006D7B29 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		AA4ADCCE2A97D2AB000B4F3F /* BabyChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4ADCD12A97D2AB000B4F3F /* BabyChefApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyChefApp.swift; sourceTree = "<group>"; };
 		AA4ADCD32A97D2AB000B4F3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,9 +74,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA2E0B3E2AB3A5FB004D5F77 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				AA2E0B3F2AB3A607004D5F77 /* BcTextField.swift */,
+				AA2E0B412AB3A653004D5F77 /* BcDatePicker.swift */,
+				AA2E0B432AB3A69D004D5F77 /* BcToggleButton.swift */,
+				AA2E0B452AB3A8B2004D5F77 /* BcSecureField.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
 		AA3349BB2A993BE70057EDB8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AA2E0B3E2AB3A5FB004D5F77 /* Form */,
+				AA37043B2A9D44A8006D7B29 /* Misc */,
 				AA3349BC2A993BF40057EDB8 /* Login */,
 			);
 			path = Components;
@@ -79,9 +106,19 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		AA37043B2A9D44A8006D7B29 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				AA37043C2A9D44C4006D7B29 /* RoundedCorners.swift */,
+				AA2E0B3C2AB3A22F004D5F77 /* StepperIndicator.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		AA4ADCC52A97D2AB000B4F3F = {
 			isa = PBXGroup;
 			children = (
+				AA2135182AA3DBCD00EC10B3 /* GoogleService-Info.plist */,
 				AA4ADCD02A97D2AB000B4F3F /* BabyChef */,
 				AA4ADCCF2A97D2AB000B4F3F /* Products */,
 			);
@@ -98,7 +135,6 @@
 		AA4ADCD02A97D2AB000B4F3F /* BabyChef */ = {
 			isa = PBXGroup;
 			children = (
-				AA3349B92A9931C50057EDB8 /* GoogleService-Info.plist */,
 				AAB816DF2A9925DC00EE6B18 /* ViewModels */,
 				AAB816DC2A99254F00EE6B18 /* Models */,
 				AAB816DB2A99253500EE6B18 /* Views */,
@@ -149,6 +185,7 @@
 				AAB816E22A99262F00EE6B18 /* LoginView.swift */,
 				AA3349BF2A993CEF0057EDB8 /* HomeView.swift */,
 				AA3349C12A9946A40057EDB8 /* BabyInfoView.swift */,
+				AA3704392A9D4369006D7B29 /* ConfirmationView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -222,7 +259,7 @@
 			files = (
 				AA4ADCD92A97D2AC000B4F3F /* Preview Assets.xcassets in Resources */,
 				AA4ADCD62A97D2AC000B4F3F /* Assets.xcassets in Resources */,
-				AA3349BA2A9931C50057EDB8 /* GoogleService-Info.plist in Resources */,
+				AA2135192AA3DBCD00EC10B3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,8 +271,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA7AB2FE2A9BEB94000AAB33 /* SignUpStepTwo.swift in Sources */,
+				AA2E0B442AB3A69D004D5F77 /* BcToggleButton.swift in Sources */,
+				AA2E0B462AB3A8B2004D5F77 /* BcSecureField.swift in Sources */,
+				AA2E0B3D2AB3A22F004D5F77 /* StepperIndicator.swift in Sources */,
 				AA7AB2FC2A9BEB72000AAB33 /* SignUpStepOne.swift in Sources */,
+				AA37043A2A9D4369006D7B29 /* ConfirmationView.swift in Sources */,
 				AA4ADCD42A97D2AB000B4F3F /* ContentView.swift in Sources */,
+				AA2E0B402AB3A607004D5F77 /* BcTextField.swift in Sources */,
+				AA37043D2A9D44C4006D7B29 /* RoundedCorners.swift in Sources */,
 				AA4ADCD22A97D2AB000B4F3F /* BabyChefApp.swift in Sources */,
 				AAB816DE2A9925C900EE6B18 /* AuthModels.swift in Sources */,
 				AAB816E32A99262F00EE6B18 /* LoginView.swift in Sources */,
@@ -243,6 +286,7 @@
 				AA3349BE2A993C550057EDB8 /* SignIn.swift in Sources */,
 				AA3349C02A993CEF0057EDB8 /* HomeView.swift in Sources */,
 				AAB816E62A99274F00EE6B18 /* SignUp.swift in Sources */,
+				AA2E0B422AB3A653004D5F77 /* BcDatePicker.swift in Sources */,
 				AAB816E12A99260800EE6B18 /* AuthViewModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

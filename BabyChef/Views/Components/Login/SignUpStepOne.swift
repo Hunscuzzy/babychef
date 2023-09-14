@@ -16,24 +16,27 @@ struct SignUpStepOne: View {
     let genders = ["Maman", "Papa"]
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 20) {
             Text("Infos sur le chef")
-            Form {
-                Section {
-                    TextField("Prénom", text: $firstName)
-                    Picker("Sexe", selection: $gender) {
-                        ForEach(genders, id: \.self) { gender in
-                            Text(gender).tag(gender)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    DatePicker("Date de naissance", selection: $birthDate, displayedComponents: .date)
-                }
-                
-                Button("Continuer") {
-                    currentStep = 2
-                }
+                .font(.title)
+                .frame(maxWidth: .infinity, alignment: .center)
+
+            BcTextField(label: "Prénom", text: $firstName)
+
+            BcToggleButton(label: "Sexe", value: $gender, values: genders)
+
+            BcDatePicker(label: "Date de naissance", date: $birthDate)
+            
+            Button("Continuer") {
+                currentStep += 1
             }
+            .foregroundColor(.white)
+            .padding(10)
+            .frame(maxWidth: .infinity)
+            .background(Color.blue)
+            .cornerRadius(8)
+
         }
+        .padding(20)
     }
 }

@@ -30,13 +30,12 @@ struct SignUp: View {
         }
         
         VStack {
-            Text("Bienvenue !")
-            Spacer()
-            
+            StepperIndicator(currentStep: $currentStep, totalSteps: 2, title: "Inscription")
+
             if currentStep == 1 {
                 SignUpStepOne(firstName: $firstName, gender: $gender, birthDate: $birthDate, currentStep: $currentStep)
             } else if currentStep == 2 {
-                SignUpStepTwo(email: $email, password: $password, confirmPassword: $confirmPassword, showError: $showError)
+                SignUpStepTwo(email: $email, password: $password, confirmPassword: $confirmPassword, showError: $showError, currentStep: $currentStep)
                 Button("Créer mon compte") {
                     guard email != "", password != "", firstName != "", gender != "" else {
                         specificErrorMessage = "Tous les champs doivent être remplis."

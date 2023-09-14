@@ -12,7 +12,6 @@ struct LoginView: View {
 
     var body: some View {
         VStack {
-                   // Une image (veuillez ajouter votre image dans l'asset catalog et remplacez "your_image_name")
                    Image("logo")
                        .resizable()
                        .scaledToFit()
@@ -22,8 +21,11 @@ struct LoginView: View {
                        .font(.largeTitle)
                        .bold()
                        .padding(.bottom, 50)
+            
+                    Text("Des repas faits avec amour, pour ceux que vous aimez")
+                        .font(.title2)
+                        .padding(.bottom, 50)
 
-                   // Un bouton pour aller vers la page d'inscription
                    NavigationLink(destination: SignUp()) {
                        Text("Devenir Chef")
                            .font(.headline)
