@@ -21,7 +21,7 @@ struct BcButton: View {
                 .frame(maxWidth: fullWidth == true ? .infinity : nil)
                 .background(
                     ZStack {
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        RoundedRectangle(cornerRadius: 64, style: .continuous)
                             .shadow(color: Color.black.opacity(0.2), radius: 10, x: 5, y: 5)
                             .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
                         
