@@ -32,6 +32,8 @@
 		AAB816E12A99260800EE6B18 /* AuthViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB816E02A99260800EE6B18 /* AuthViewModels.swift */; };
 		AAB816E32A99262F00EE6B18 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB816E22A99262F00EE6B18 /* LoginView.swift */; };
 		AAB816E62A99274F00EE6B18 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB816E52A99274F00EE6B18 /* SignUp.swift */; };
+		AAC8EE842ABB66CF00C239B1 /* BcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8EE832ABB66CF00C239B1 /* BcButton.swift */; };
+		AAC8EE872ABB67EE00C239B1 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8EE862ABB67EE00C239B1 /* ColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		AAB816E02A99260800EE6B18 /* AuthViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModels.swift; sourceTree = "<group>"; };
 		AAB816E22A99262F00EE6B18 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AAB816E52A99274F00EE6B18 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		AAC8EE832ABB66CF00C239B1 /* BcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BcButton.swift; sourceTree = "<group>"; };
+		AAC8EE862ABB67EE00C239B1 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 				AA2E0B412AB3A653004D5F77 /* BcDatePicker.swift */,
 				AA2E0B432AB3A69D004D5F77 /* BcToggleButton.swift */,
 				AA2E0B452AB3A8B2004D5F77 /* BcSecureField.swift */,
+				AAC8EE832ABB66CF00C239B1 /* BcButton.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -98,8 +103,8 @@
 		AA3349BC2A993BF40057EDB8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				AAB816E52A99274F00EE6B18 /* SignUp.swift */,
 				AA3349BD2A993C550057EDB8 /* SignIn.swift */,
+				AAB816E52A99274F00EE6B18 /* SignUp.swift */,
 				AA7AB2FB2A9BEB72000AAB33 /* SignUpStepOne.swift */,
 				AA7AB2FD2A9BEB94000AAB33 /* SignUpStepTwo.swift */,
 			);
@@ -135,6 +140,7 @@
 		AA4ADCD02A97D2AB000B4F3F /* BabyChef */ = {
 			isa = PBXGroup;
 			children = (
+				AAC8EE852ABB67DA00C239B1 /* Utilities */,
 				AAB816DF2A9925DC00EE6B18 /* ViewModels */,
 				AAB816DC2A99254F00EE6B18 /* Models */,
 				AAB816DB2A99253500EE6B18 /* Views */,
@@ -188,6 +194,14 @@
 				AA3704392A9D4369006D7B29 /* ConfirmationView.swift */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		AAC8EE852ABB67DA00C239B1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AAC8EE862ABB67EE00C239B1 /* ColorExtensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,10 +290,12 @@
 				AA2E0B3D2AB3A22F004D5F77 /* StepperIndicator.swift in Sources */,
 				AA7AB2FC2A9BEB72000AAB33 /* SignUpStepOne.swift in Sources */,
 				AA37043A2A9D4369006D7B29 /* ConfirmationView.swift in Sources */,
+				AAC8EE842ABB66CF00C239B1 /* BcButton.swift in Sources */,
 				AA4ADCD42A97D2AB000B4F3F /* ContentView.swift in Sources */,
 				AA2E0B402AB3A607004D5F77 /* BcTextField.swift in Sources */,
 				AA37043D2A9D44C4006D7B29 /* RoundedCorners.swift in Sources */,
 				AA4ADCD22A97D2AB000B4F3F /* BabyChefApp.swift in Sources */,
+				AAC8EE872ABB67EE00C239B1 /* ColorExtensions.swift in Sources */,
 				AAB816DE2A9925C900EE6B18 /* AuthModels.swift in Sources */,
 				AAB816E32A99262F00EE6B18 /* LoginView.swift in Sources */,
 				AA3349C22A9946A40057EDB8 /* BabyInfoView.swift in Sources */,

@@ -36,7 +36,7 @@ struct SignUp: View {
                 SignUpStepOne(firstName: $firstName, gender: $gender, birthDate: $birthDate, currentStep: $currentStep)
             } else if currentStep == 2 {
                 SignUpStepTwo(email: $email, password: $password, confirmPassword: $confirmPassword, showError: $showError, currentStep: $currentStep)
-                Button("Créer mon compte") {
+                BcButton(label: "Créer mon compte") {
                     guard email != "", password != "", firstName != "", gender != "" else {
                         specificErrorMessage = "Tous les champs doivent être remplis."
                         return

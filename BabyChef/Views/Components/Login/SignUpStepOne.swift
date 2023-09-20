@@ -27,7 +27,7 @@ struct SignUpStepOne: View {
 
             BcDatePicker(label: "Date de naissance", date: $birthDate)
             
-            Button("Continuer") {
+            BcButton(label: "Continuer") {
                 currentStep += 1
             }
             .foregroundColor(.white)

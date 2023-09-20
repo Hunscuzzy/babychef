@@ -14,13 +14,11 @@ struct SignIn: View {
     @State private var showError: Bool = false
 
     var body: some View {
-        Form {
-            Section {
-                TextField("Email", text: $email)
-                SecureField("Password", text: $password)
-            }
+        VStack {
+            TextField("Email", text: $email)
+            SecureField("Password", text: $password)
 
-            Button("Connexion") {
+            BcButton(label: "Connexion") {
                 authViewModel.signIn(email: email, password: password) { success, error in
                     showError = !success
                 }

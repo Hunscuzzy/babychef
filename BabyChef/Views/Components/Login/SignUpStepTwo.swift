@@ -27,7 +27,7 @@ struct SignUpStepTwo: View {
                         .foregroundColor(.red)
                 }
                 
-                Button("Précédent") {
+                BcButton(label: "Précédent") {
                     currentStep -= 1
                 }
             }

@@ -36,7 +36,6 @@ struct LoginView: View {
                            .cornerRadius(15.0)
                    }
 
-                   // Un lien vers la page de connexion
                    NavigationLink(destination: SignIn()) {
                        HStack {
                            Text("Je suis déjà Chef")
